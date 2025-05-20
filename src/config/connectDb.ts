@@ -6,6 +6,7 @@ import { User } from "../entity/user";
 import { Workshop } from "../entity/workshop";
 import { Booking } from "../entity/booking";
 import { Otp } from "../entity/otp";
+import { Rating } from "../entity/rating";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -16,7 +17,7 @@ export const AppDataSource = new DataSource({
   database: DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, Workshop, Booking,Otp],
+  entities: [User, Workshop, Booking,Otp,Rating],
 });
 
 const connectDb = async (): Promise<DataSource> => {

@@ -12,6 +12,7 @@ import { User } from "./user";
 import { Booking } from "./booking";
 import { AppDataSource } from "../config/connectDb";
 import { FileDto } from "../types/fileDto";
+import { Rating } from "./rating";
 
 @Entity()
 export class Workshop {
@@ -66,6 +67,9 @@ export class Workshop {
 
   @OneToMany(() => Booking, (booking) => booking.user)
   bookings: Booking[];
+
+  @OneToMany(() => Rating, (rating) => rating.workshop)
+  ratings: Rating[];
 }
 
 export const getworkshopRepository = () =>
